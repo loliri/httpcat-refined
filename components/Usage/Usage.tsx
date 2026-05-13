@@ -39,7 +39,7 @@ const Usage = ({ t }: UsageProps) => {
           {isValueCopied ? (
             t.COPIED
           ) : (
-            <Image src={copyIcon} alt={t.COPY_ICON_ALT_TEXT} />
+            <Image src={copyIcon} alt={t.COPY_ICON_ALT_TEXT ?? 'Copy'} />
           )}
         </button>
       </pre>

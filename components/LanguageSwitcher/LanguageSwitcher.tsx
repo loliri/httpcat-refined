@@ -4,8 +4,8 @@ import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 const LANGUAGES = [
-  { code: 'en', label: 'English', flag: '🇬🇧', href: '/' },
-  { code: 'zh', label: '中文',    flag: '🇨🇳', href: '/zh' },
+  { code: 'en', label: 'English', abbr: 'EN', href: '/' },
+  { code: 'zh', label: '中文',    abbr: 'ZH', href: '/zh' },
 ];
 
 type Props = {
@@ -38,7 +38,7 @@ const LanguageSwitcher = ({ currentLocale }: Props) => {
         aria-haspopup="listbox"
         aria-expanded={open}
       >
-        <span>{current.flag}</span>
+        <span className="text-xs font-bold tracking-wider opacity-60">{current.abbr}</span>
         <span>{current.label}</span>
         <svg
           className={`w-3 h-3 transition-transform ${open ? 'rotate-180' : ''}`}
@@ -51,7 +51,7 @@ const LanguageSwitcher = ({ currentLocale }: Props) => {
       {open && (
         <ul
           role="listbox"
-          className="absolute right-0 mt-1 w-36 rounded-lg border border-[--interactive] bg-[--bg-color] shadow-lg overflow-hidden z-50"
+          className="absolute right-0 mt-1 w-36 rounded-lg border border-[--interactive] bg-[--bg-color] shadow-lg overflow-hidden z-50 list-none p-0 m-0"
         >
           {LANGUAGES.map((lang) => {
             const isActive = lang.code === currentLocale;
@@ -69,7 +69,7 @@ const LanguageSwitcher = ({ currentLocale }: Props) => {
                       : 'opacity-70 hover:opacity-100',
                   ].join(' ')}
                 >
-                  <span>{lang.flag}</span>
+                  <span className="text-xs font-bold tracking-wider opacity-50 w-6">{lang.abbr}</span>
                   <span>{lang.label}</span>
                   {isActive && (
                     <svg className="ml-auto w-3.5 h-3.5 text-[--interactive]" viewBox="0 0 12 12" fill="currentColor">

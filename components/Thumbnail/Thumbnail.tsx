@@ -42,6 +42,11 @@ const Thumbnail = ({ code, description, t }: ThumbnailProps) => {
             {code}
           </div>
           <p className="font-semibold">{description}</p>
+          {t.LOCALE === 'zh' && statuses[code as unknown as keyof typeof statuses]?.messageZh && (
+            <p className="text-sm opacity-75 mt-0">
+              {statuses[code as unknown as keyof typeof statuses].messageZh}
+            </p>
+          )}
         </div>
       </Link>
     </div>

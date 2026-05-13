@@ -27,6 +27,11 @@ export default async function Info(props: { params: Promise<{ status: string }> 
 
         <h1 className="text-center my-12">
           {statusObj.code} {statusObj.message}
+          {statusObj.messageZh && (
+            <span className="block text-xl font-normal opacity-80 mt-1">
+              {statusObj.messageZh}
+            </span>
+          )}
         </h1>
 
         <div className="text-center">

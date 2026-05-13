@@ -65,24 +65,28 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await props.params;
   const statusObj = statuses[params.status as unknown as keyof typeof statuses];
+  const localizedName = statusObj.messageZh
+    ? `${statusObj.message}（${statusObj.messageZh}）`
+    : statusObj.message;
+  const title = `${statusObj.code} ${localizedName} | HTTP Cats · refined`;
+  const description = `${statusObj.code} ${localizedName} 的 HTTP 猫咪图片`;
+  const imagePath = statusObj.hasImage ? `/images/${statusObj.code}.jpg` : '/images/0.jpg';
 
   return {
-    title: `${statusObj.code} ${statusObj.message} | HTTP Cats`,
-    description: `HTTP Cat for status ${statusObj.code} ${statusObj.message}`,
+    title,
+    description,
     openGraph: {
-      title: `${statusObj.code} ${statusObj.message} | HTTP Cats`,
-      images: [
-        {
-          url: `https://http.cat/${statusObj.code}.jpg`,
-          alt: statusObj.message,
-        },
-      ],
+      title,
+      description,
+      url: `/zh/status/${statusObj.code}`,
+      images: [{ url: imagePath, alt: statusObj.message }],
+      locale: 'zh_CN',
     },
     twitter: {
       card: 'summary_large_image',
-      site: `https://http.cat/status/${statusObj.code}`,
-      title: `${statusObj.code} ${statusObj.message} | HTTP Cats`,
-      images: [`https://http.cat/${statusObj.code}`],
+      title,
+      description,
+      images: [imagePath],
     },
   };
 }

@@ -64,24 +64,24 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await props.params;
   const statusObj = statuses[params.status as unknown as keyof typeof statuses];
+  const title = `${statusObj.code} ${statusObj.message} | HTTP Cats · refined`;
+  const description = `HTTP Cat for status ${statusObj.code} ${statusObj.message}`;
+  const imagePath = statusObj.hasImage ? `/images/${statusObj.code}.jpg` : '/images/0.jpg';
 
   return {
-    title: `${statusObj.code} ${statusObj.message} | HTTP Cats`,
-    description: `HTTP Cat for status ${statusObj.code} ${statusObj.message}`,
+    title,
+    description,
     openGraph: {
-      title: `${statusObj.code} ${statusObj.message} | HTTP Cats`,
-      images: [
-        {
-          url: `https://http.cat/${statusObj.code}.jpg`,
-          alt: statusObj.message,
-        },
-      ],
+      title,
+      description,
+      url: `/status/${statusObj.code}`,
+      images: [{ url: imagePath, alt: statusObj.message }],
     },
     twitter: {
       card: 'summary_large_image',
-      site: `https://http.cat/status/${statusObj.code}`,
-      title: `${statusObj.code} ${statusObj.message} | HTTP Cats`,
-      images: [`https://http.cat/${statusObj.code}`],
+      title,
+      description,
+      images: [imagePath],
     },
   };
 }

@@ -5,7 +5,7 @@ type HeaderProps = {
 };
 
 const Header = ({ t }: HeaderProps) => {
-  const href = t.LOCALE === 'ca' ? '/ca' : '/';
+  const href = t.LOCALE === 'zh' ? '/zh' : '/';
 
   return (
     <header className="flex">

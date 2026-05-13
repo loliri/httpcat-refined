@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import statuses from '@/lib/statuses';
+
 type ThumbnailProps = {
   code: number;
   description: string;
@@ -10,7 +12,10 @@ type ThumbnailProps = {
 };
 
 const Thumbnail = ({ code, description, t }: ThumbnailProps) => {
-  const hrefBase = t.LOCALE === 'ca' ? '/ca' : '';
+  const hrefBase = t.LOCALE === 'zh' ? '/zh' : '';
+  const imageSrc = statuses[code as unknown as keyof typeof statuses]?.hasImage
+    ? `/images/${code}.jpg`
+    : '/images/0.jpg';
 
   const saveScrollPosition = () => {
     sessionStorage.setItem('homeScrollPosition', window.scrollY.toString());
@@ -25,7 +30,7 @@ const Thumbnail = ({ code, description, t }: ThumbnailProps) => {
       >
         <div className="pt-[56.25%] relative overflow-hidden">
           <Image
-            src={`/images/${code}.jpg`}
+            src={imageSrc}
             alt=""
             loading="lazy"
             fill

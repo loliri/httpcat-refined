@@ -12,7 +12,7 @@ import { getTranslations } from '@/lib/translation';
 
 export default async function Info(props: { params: Promise<{ status: string }> }) {
   const params = await props.params;
-  const t = await getTranslations('ca');
+  const t = await getTranslations('zh');
 
   const statusObj = statuses[params.status as unknown as keyof typeof statuses];
   const statusInfoHTML = await getStatusInfo(params.status, t.LOCALE);
@@ -22,7 +22,7 @@ export default async function Info(props: { params: Promise<{ status: string }> 
       <Header t={t} />
       <main>
         <nav>
-          <Link href="/ca" className="text-white">{`< ${t.BACK_TO_HOME}`}</Link>
+          <Link href="/zh" className="text-white">{`< ${t.BACK_TO_HOME}`}</Link>
         </nav>
 
         <h1 className="text-center my-12">
@@ -31,7 +31,7 @@ export default async function Info(props: { params: Promise<{ status: string }> 
 
         <div className="text-center">
           <Image
-            src={`/images/${statusObj.code.toString()}.jpg`}
+            src={statusObj.hasImage ? `/images/${statusObj.code.toString()}.jpg` : '/images/0.jpg'}
             alt={statusObj.message}
             width={750}
             height={600}

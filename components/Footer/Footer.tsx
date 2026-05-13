@@ -18,7 +18,7 @@ type FooterProps = {
 const Footer = ({ t }: FooterProps) => {
   const pathname = usePathname();
 
-  const localeHref = t.LOCALE === 'ca' ? '/' : '/ca';
+  const localeHref = t.LOCALE === 'zh' ? '/' : '/zh';
 
   return (
     <div className={styles.container}>

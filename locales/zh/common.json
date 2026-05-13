@@ -1,14 +1,14 @@
 {
-  "LOCALE": "ca",
-  "APP_TITLE": "HTTP Gats",
-  "USAGE_TITLE": "Instruccions",
-  "USAGE_PARAM": "codi_d_estat",
-  "USAGE_NOTE_LABEL": "Nota",
-  "USAGE_NOTE_TEXT": "Si necessiteu una extensió al final de l’URL només heu d’afegir",
+  "LOCALE": "zh",
+  "APP_TITLE": "HTTP 猫咪",
+  "USAGE_TITLE": "用法",
+  "USAGE_PARAM": "状态码",
+  "USAGE_NOTE_LABEL": "提示",
+  "USAGE_NOTE_TEXT": "如果需要在 URL 末尾加扩展名,只需追加",
   "LANGUAGE_LINK_TEXT": "English Version",
-  "DEVELOPED_BY": "Desenvolupat per",
-  "IMAGES_BY": "Imatges de",
-  "COPIED": "Copiat!",
-  "COPY_TO_CLIPBOARD": "Copiar al porta-retalls",
-  "BACK_TO_HOME": "Tornar a l'inici"
+  "DEVELOPED_BY": "开发者",
+  "IMAGES_BY": "原始图片作者",
+  "COPIED": "已复制!",
+  "COPY_TO_CLIPBOARD": "复制到剪贴板",
+  "BACK_TO_HOME": "返回首页"
 }

@@ -35,7 +35,7 @@ export default async function Info(props: { params: Promise<{ status: string }> 
 
         <div className="text-center">
           <Image
-            src={`/images/${statusObj.code.toString()}.jpg`}
+            src={statusObj.hasImage ? `/images/${statusObj.code.toString()}.jpg` : '/images/0.jpg'}
             alt={statusObj.message}
             width={750}
             height={600}

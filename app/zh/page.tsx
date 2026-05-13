@@ -9,7 +9,7 @@ import { getTranslations } from '@/lib/translation';
 import statuses from '@/lib/statuses';
 
 export default async function Home() {
-  const t = await getTranslations('ca');
+  const t = await getTranslations('zh');
 
   return (
     <>

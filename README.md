@@ -1,10 +1,49 @@
 # HTTP Cats · refined
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Languages](https://img.shields.io/badge/languages-English_%7C_中文-d0383e)](#languages)
+
 📖 README: **English** | **[简体中文](docs/README.zh-CN.md)** | **[繁體中文](docs/README.zh-TW.md)** | **[Français](docs/README.fr.md)** | **[Русский](docs/README.ru.md)**
+
+🌐 Live demo: **[hcr.cialo.site](https://hcr.cialo.site)**
 
 ![HTTP Cat picture](https://http.cat/204)
 
-> A personal fork of [httpcats/http.cat](https://github.com/httpcats/http.cat), rebuilt with a cleaner UI, expanded status code coverage, and i18n support.
+**HTTP Cats · refined** is a multilingual HTTP status code reference site built with Next.js. It covers 120+ status codes — including standard RFC codes, Nginx 4xx extensions, Cloudflare 5xx, and the full Cloudflare 1xxx error series — each illustrated with a cat picture, organized by category, and translated into multiple languages. A refined fork of [httpcats/http.cat](https://github.com/httpcats/http.cat).
+
+## Highlights
+
+- 🌏 **Multilingual** — Full UI and per-status-code descriptions translated. English and Simplified Chinese (简体中文) ship out of the box. Adding a new language is a one-folder change
+- 📊 **120+ status codes** — Standard codes missing from the original (505, etc.), Nginx extensions (444, 494–499), Cloudflare 5xx (520–527, 530), and all Cloudflare 1xxx errors (1000–1201)
+- 🗂️ **Category tabs** — Codes grouped by class (1xx / 2xx / 3xx / 4xx / 5xx / Cloudflare 1xxx) with descriptions
+- 🖼️ **Image fallback** — Codes without dedicated images use a graceful placeholder
+- ✨ **Cleaner UI** — Ads removed, social cruft trimmed, frosted-glass language switcher
+
+## Languages
+
+### Available now
+
+| Locale | Language | Path |
+|--------|----------|------|
+| `en` | English | `/` |
+| `zh-CN` | 简体中文 (Simplified Chinese) | `/zh` |
+
+### On the roadmap
+
+Translations welcome. PRs gladly accepted for:
+
+- 繁體中文 (Traditional Chinese)
+- 日本語 (Japanese)
+- 한국어 (Korean)
+- Français (French)
+- Deutsch (German)
+- Español (Spanish)
+- Русский (Russian)
+
+See [Adding a new language](#adding-a-new-language) below.
 
 ## Development
 
@@ -18,8 +57,8 @@
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/jhll1124/http.cat.refined.git
-cd http.cat.refined
+git clone https://github.com/jhll1124/httpcat-refined.git
+cd httpcat-refined
 npm install
 ```
 
@@ -47,14 +86,6 @@ This runs `next build` followed by a post-build script that prepares the static 
 | `/zh` | 中文 |
 | `/status/<code>` | Status detail (English) |
 | `/<locale>/status/<code>` | Status detail (localized) |
-
-## What's different
-
-- **More status codes** — Standard codes that were missing (505, etc.), all Nginx 4xx extensions (444, 494–499), Cloudflare 5xx (520–527, 530), and the full Cloudflare 1xxx error series (1000–1201)
-- **i18n** — Per-locale UI strings and per-status-code description files under `content/<locale>/`. Falls back to English when a translation is missing. Adding a new language only requires a `locales/<locale>/common.json` and a `content/<locale>/` folder
-- **Category tabs** — Status codes grouped by class (1xx / 2xx / 3xx / 4xx / 5xx / Cloudflare 1xxx) with tab navigation and category descriptions
-- **Image fallback** — Codes without a dedicated cat image gracefully fall back to a placeholder
-- **Cleaner UI** — Removed ads, replaced social buttons with GitHub only, frosted-glass language switcher in the header
 
 ## Tech stack
 

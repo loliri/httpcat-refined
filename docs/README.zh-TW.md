@@ -18,8 +18,8 @@
 複製儲存庫並安裝相依套件：
 
 ```bash
-git clone https://github.com/jhll1124/http.cat.refined.git
-cd http.cat.refined
+git clone https://github.com/jhll1124/httpcat-refined.git
+cd httpcat-refined
 npm install
 ```
 

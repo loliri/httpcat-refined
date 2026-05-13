@@ -18,8 +18,8 @@
 克隆仓库并安装依赖：
 
 ```bash
-git clone https://github.com/jhll1124/http.cat.refined.git
-cd http.cat.refined
+git clone https://github.com/jhll1124/httpcat-refined.git
+cd httpcat-refined
 npm install
 ```
 

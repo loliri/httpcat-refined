@@ -8,14 +8,11 @@ import rehypeStringify from 'rehype-stringify';
 export async function getStatusInfo(status: string, locale: string = 'en') {
   // Try locale-specific file first, fall back to English
   const localePath = `./content/${locale}/${status}.md`;
-  const defaultPath = `./content/${status}.md`;
+  const englishPath = `./content/en/${status}.md`;
 
-  let filePath: string;
-  if (locale !== 'en' && existsSync(localePath)) {
-    filePath = localePath;
-  } else {
-    filePath = defaultPath;
-  }
+  const filePath = (locale !== 'en' && existsSync(localePath))
+    ? localePath
+    : englishPath;
 
   const fileContent = readFileSync(filePath, 'utf8');
 

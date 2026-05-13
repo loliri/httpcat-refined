@@ -4,11 +4,12 @@
   "USAGE_TITLE": "用法",
   "USAGE_PARAM": "状态码",
   "USAGE_NOTE_LABEL": "提示",
-  "USAGE_NOTE_TEXT": "如果需要在 URL 末尾加扩展名,只需追加",
+  "USAGE_NOTE_TEXT": "如果需要在 URL 末尾加扩展名，只需追加",
   "LANGUAGE_LINK_TEXT": "English Version",
   "DEVELOPED_BY": "开发者",
   "IMAGES_BY": "原始图片作者",
   "COPIED": "已复制!",
   "COPY_TO_CLIPBOARD": "复制到剪贴板",
+  "COPY_ICON_ALT_TEXT": "复制图标",
   "BACK_TO_HOME": "返回首页"
 }

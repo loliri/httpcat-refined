@@ -1,12 +1,27 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 const LANGUAGES = [
-  { code: 'en', label: 'English', href: '/' },
-  { code: 'zh', label: '中文',    href: '/zh' },
+  { code: 'en', label: 'English' },
+  { code: 'zh', label: '中文' },
 ];
+
+// en 是根路径，无前缀；其他语言走 /<code>/...
+function buildHref(targetCode: string, pathname: string): string {
+  // 剥掉已知的 locale 前缀
+  const stripped = LANGUAGES
+    .filter((l) => l.code !== 'en')
+    .reduce((p, l) => {
+      if (p === `/${l.code}`) return '/';
+      if (p.startsWith(`/${l.code}/`)) return p.slice(l.code.length + 1);
+      return p;
+    }, pathname);
+
+  if (targetCode === 'en') return stripped || '/';
+  return stripped === '/' ? `/${targetCode}` : `/${targetCode}${stripped}`;
+}
 
 type Props = {
   currentLocale: string;
@@ -16,6 +31,7 @@ const LanguageSwitcher = ({ currentLocale }: Props) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const pathname = usePathname();
 
   const current = LANGUAGES.find((l) => l.code === currentLocale) ?? LANGUAGES[0];
 
@@ -115,7 +131,7 @@ const LanguageSwitcher = ({ currentLocale }: Props) => {
               }}
             >
               <button
-                onClick={() => { setOpen(false); router.push(lang.href); }}
+                onClick={() => { setOpen(false); router.push(buildHref(lang.code, pathname)); }}
                 style={{
                   width: '100%',
                   padding: '11px 16px',

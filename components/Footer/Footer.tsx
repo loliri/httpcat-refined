@@ -23,6 +23,10 @@ const Footer = ({ t }: FooterProps) => {
       </nav>
 
       <p>
+        {t.REFINED_BY}{' '}
+        <a href="https://github.com/jhll1124">@jhll1124</a>
+      </p>
+      <p>
         {t.DEVELOPED_BY}{' '}
         <a href="https://twitter.com/rogeriopvl">@rogeriopvl</a>
       </p>

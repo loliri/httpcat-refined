@@ -15,15 +15,15 @@ const Footer = ({ t }: FooterProps) => {
       </div>
       <p>
         {t.REFINED_BY}{' '}
-        <a href="https://github.com/jhll1124">@jhll1124</a>
+        <a href="https://github.com/jhll1124" target="_blank" rel="noopener noreferrer">@jhll1124</a>
       </p>
       <p>
         {t.DEVELOPED_BY}{' '}
-        <a href="https://twitter.com/rogeriopvl">@rogeriopvl</a>
+        <a href="https://twitter.com/rogeriopvl" target="_blank" rel="noopener noreferrer">@rogeriopvl</a>
       </p>
       <p>
         {t.IMAGES_BY} Tomomi Imura (
-        <a href="https://twitter.com/girlie_mac">@girlie_mac</a>)
+        <a href="https://twitter.com/girlie_mac" target="_blank" rel="noopener noreferrer">@girlie_mac</a>)
       </p>
     </div>
   );

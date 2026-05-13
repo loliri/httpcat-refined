@@ -12,7 +12,7 @@ type UsageProps = {
 
 const Usage = ({ t }: UsageProps) => {
   const [isValueCopied, setIsValueCopied] = useState(false);
-  const [value, copy] = useCopyToClipboard();
+  const [, copy] = useCopyToClipboard();
 
   const usageValue = `https://http.cat/[${t.USAGE_PARAM}]`;
 

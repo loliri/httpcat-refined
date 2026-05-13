@@ -1,6 +1,5 @@
 import Usage from '@/components/Usage';
-import ThumbnailGrid from '@/components/ThumbnailGrid';
-import Thumbnail from '@/components/Thumbnail';
+import CategoryTabs from '@/components/CategoryTabs';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollRestore from '@/components/ScrollRestore';
@@ -17,23 +16,7 @@ export default async function Home() {
       <Header t={t} />
       <main>
         <Usage t={t} />
-        {categories.map((cat) => (
-          <section key={cat.key} className="mb-12">
-            <h2 className="text-2xl font-bold mb-4 mt-8 border-b border-[--interactive] pb-2">
-              {t[cat.key]}
-            </h2>
-            <ThumbnailGrid>
-              {cat.statuses.map((status) => (
-                <Thumbnail
-                  code={status.code}
-                  key={status.code}
-                  description={status.message}
-                  t={t}
-                />
-              ))}
-            </ThumbnailGrid>
-          </section>
-        ))}
+        <CategoryTabs categories={categories} t={t} />
       </main>
       <Footer t={t} />
     </>

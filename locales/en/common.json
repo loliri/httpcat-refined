@@ -18,5 +18,11 @@
   "CAT_3XX": "3xx — Redirection",
   "CAT_4XX": "4xx — Client Error",
   "CAT_5XX": "5xx — Server Error",
-  "CAT_CF":  "Cloudflare 1xxx"
+  "CAT_CF":  "Cloudflare 1xxx",
+  "CAT_1XX_DESC": "The request was received and understood. The server is continuing the process.",
+  "CAT_2XX_DESC": "The request was successfully received, understood, and accepted.",
+  "CAT_3XX_DESC": "Further action is needed to complete the request, usually a redirect.",
+  "CAT_4XX_DESC": "The request contains bad syntax or cannot be fulfilled by the server.",
+  "CAT_5XX_DESC": "The server failed to fulfil a valid request.",
+  "CAT_CF_DESC":  "Cloudflare-specific error codes returned when issues occur between the client, Cloudflare, and the origin server."
 }

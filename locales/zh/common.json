@@ -18,5 +18,11 @@
   "CAT_3XX": "3xx — 重定向",
   "CAT_4XX": "4xx — 客户端错误",
   "CAT_5XX": "5xx — 服务器错误",
-  "CAT_CF":  "Cloudflare 1xxx 错误"
+  "CAT_CF":  "Cloudflare 1xxx 错误",
+  "CAT_1XX_DESC": "请求已被接收并理解，服务器正在继续处理。",
+  "CAT_2XX_DESC": "请求已被成功接收、理解并处理。",
+  "CAT_3XX_DESC": "需要进一步操作才能完成请求，通常是重定向。",
+  "CAT_4XX_DESC": "请求存在语法错误或无法被服务器处理。",
+  "CAT_5XX_DESC": "服务器在处理有效请求时发生了错误。",
+  "CAT_CF_DESC":  "Cloudflare 专属错误码，在客户端、Cloudflare 与源服务器之间出现问题时返回。"
 }

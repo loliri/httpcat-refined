@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import statuses from '@/lib/statuses';
+import { localePrefix, localizedStatusName } from '@/lib/locale';
 
 type ThumbnailProps = {
   code: number;
@@ -12,10 +13,10 @@ type ThumbnailProps = {
 };
 
 const Thumbnail = ({ code, description, t }: ThumbnailProps) => {
-  const hrefBase = t.LOCALE === 'zh' ? '/zh' : '';
-  const imageSrc = statuses[code as unknown as keyof typeof statuses]?.hasImage
-    ? `/images/${code}.jpg`
-    : '/images/0.jpg';
+  const status = statuses[code as unknown as keyof typeof statuses];
+  const hrefBase = localePrefix(t.LOCALE);
+  const imageSrc = status?.hasImage ? `/images/${code}.jpg` : '/images/0.jpg';
+  const localizedName = status ? localizedStatusName(status, t.LOCALE) : undefined;
 
   const saveScrollPosition = () => {
     sessionStorage.setItem('homeScrollPosition', window.scrollY.toString());
@@ -42,9 +43,9 @@ const Thumbnail = ({ code, description, t }: ThumbnailProps) => {
             {code}
           </div>
           <p className="font-semibold">{description}</p>
-          {t.LOCALE === 'zh' && statuses[code as unknown as keyof typeof statuses]?.messageZh && (
+          {localizedName && (
             <p className="text-sm opacity-75 mt-0">
-              {statuses[code as unknown as keyof typeof statuses].messageZh}
+              {localizedName}
             </p>
           )}
         </div>

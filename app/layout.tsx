@@ -5,6 +5,14 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hcr.cialo.site'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      en: '/',
+      'zh-CN': '/zh',
+      'ja-JP': '/ja',
+    },
+  },
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.png',
@@ -56,7 +64,7 @@ export default async function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var m={zh:'zh-CN'};var s=location.pathname.split('/')[1];document.documentElement.lang=m[s]||'en';})();`,
+            __html: `(function(){var m={zh:'zh-CN',ja:'ja-JP'};var s=location.pathname.split('/')[1];document.documentElement.lang=m[s]||'en';})();`,
           }}
         />
       </head>

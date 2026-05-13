@@ -4,7 +4,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Languages](https://img.shields.io/badge/languages-English_%7C_中文-d0383e)](#languages)
+[![Languages](https://img.shields.io/badge/languages-English_%7C_中文_%7C_日本語-d0383e)](#languages)
 
 📖 README: **English** | **[简体中文](docs/README.zh-CN.md)** | **[繁體中文](docs/README.zh-TW.md)** | **[Français](docs/README.fr.md)** | **[Русский](docs/README.ru.md)**
 
@@ -30,13 +30,13 @@
 |--------|----------|------|
 | `en` | English | `/` |
 | `zh-CN` | 简体中文 (Simplified Chinese) | `/zh` |
+| `ja` | 日本語 (Japanese) | `/ja` |
 
 ### On the roadmap
 
 Translations welcome. PRs gladly accepted for:
 
 - 繁體中文 (Traditional Chinese)
-- 日本語 (Japanese)
 - 한국어 (Korean)
 - Français (French)
 - Deutsch (German)

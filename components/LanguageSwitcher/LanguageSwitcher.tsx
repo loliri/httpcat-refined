@@ -6,6 +6,7 @@ import { useRouter, usePathname } from 'next/navigation';
 const LANGUAGES = [
   { code: 'en', label: 'English' },
   { code: 'zh', label: '中文' },
+  { code: 'ja', label: '日本語' },
 ];
 
 // en 是根路径，无前缀；其他语言走 /<code>/...

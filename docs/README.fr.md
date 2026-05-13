@@ -45,6 +45,7 @@ Les fichiers statiques sont exportés dans le répertoire `/out`.
 |--------|--------|
 | `/` | English |
 | `/zh` | 中文 |
+| `/ja` | 日本語 |
 | `/status/<code>` | Détail du code (anglais) |
 | `/<locale>/status/<code>` | Détail du code (localisé) |
 

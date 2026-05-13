@@ -71,6 +71,14 @@ export async function generateMetadata(
   return {
     title,
     description,
+    alternates: {
+      canonical: `/status/${statusObj.code}`,
+      languages: {
+        en: `/status/${statusObj.code}`,
+        'zh-CN': `/zh/status/${statusObj.code}`,
+        'ja-JP': `/ja/status/${statusObj.code}`,
+      },
+    },
     openGraph: {
       title,
       description,

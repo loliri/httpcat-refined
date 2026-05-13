@@ -1,12 +1,13 @@
 import Logo from '@/components/Logo';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { localeHomeHref } from '@/lib/locale';
 
 type HeaderProps = {
   t: { [key: string]: string };
 };
 
 const Header = ({ t }: HeaderProps) => {
-  const href = t.LOCALE === 'zh' ? '/zh' : '/';
+  const href = localeHomeHref(t.LOCALE);
 
   return (
     <header className="flex items-center justify-between py-4">

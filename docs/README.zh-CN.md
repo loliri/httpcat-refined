@@ -45,6 +45,7 @@ npm run build
 |------|------|
 | `/` | English |
 | `/zh` | 中文 |
+| `/ja` | 日本語 |
 | `/status/<code>` | 状态码详情（英文） |
 | `/<locale>/status/<code>` | 状态码详情（本地化） |
 

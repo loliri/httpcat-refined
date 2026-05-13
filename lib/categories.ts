@@ -4,6 +4,7 @@ export type Status = {
   code: number;
   message: string;
   messageZh?: string;
+  messageJa?: string;
   hasImage: boolean;
 };
 

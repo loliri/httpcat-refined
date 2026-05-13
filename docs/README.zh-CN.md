@@ -1,6 +1,6 @@
 # HTTP Cats · refined
 
-📖 README: **[English](../README.md)** | **[简体中文](README.zh-CN.md)** | **[繁體中文](README.zh-TW.md)** | **[Français](README.fr.md)** | **[Русский](README.ru.md)**
+📖 README: **[English](../README.md)** | **简体中文** | **[繁體中文](README.zh-TW.md)** | **[Français](README.fr.md)** | **[Русский](README.ru.md)**
 
 ![HTTP Cat 图片](https://http.cat/204)
 
@@ -91,8 +91,6 @@ npm run build
 感谢 [@pfdborges](https://github.com/pfdborges) 设计了 http.cat 的 Logo（RIP 🕯️）。
 
 原项目作者：[@rogeriopvl](https://github.com/rogeriopvl)。
-
-精修版作者：[@jhll1124](https://github.com/jhll1124)。
 
 ## 许可证
 

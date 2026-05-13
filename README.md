@@ -1,6 +1,6 @@
 # HTTP Cats · refined
 
-📖 README: **[English](README.md)** | **[简体中文](docs/README.zh-CN.md)** | **[繁體中文](docs/README.zh-TW.md)** | **[Français](docs/README.fr.md)** | **[Русский](docs/README.ru.md)**
+📖 README: **English** | **[简体中文](docs/README.zh-CN.md)** | **[繁體中文](docs/README.zh-TW.md)** | **[Français](docs/README.fr.md)** | **[Русский](docs/README.ru.md)**
 
 ![HTTP Cat picture](https://http.cat/204)
 
@@ -91,8 +91,6 @@ Thanks to [@girliemac](https://github.com/girliemac) for creating the amazing HT
 Thanks to [@pfdborges](https://github.com/pfdborges) for creating the http.cat logo (RIP 🕯️).
 
 Original project by [@rogeriopvl](https://github.com/rogeriopvl).
-
-Refined by [@jhll1124](https://github.com/jhll1124).
 
 ## License
 

@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import GithubButton from '@/components/GithubButton';
@@ -14,8 +13,6 @@ type FooterProps = {
 const Footer = ({ t }: FooterProps) => {
   const pathname = usePathname();
 
-  const localeHref = t.LOCALE === 'zh' ? '/' : '/zh';
-
   return (
     <div className={styles.container}>
       <div className={styles.social}>
@@ -23,7 +20,6 @@ const Footer = ({ t }: FooterProps) => {
       </div>
 
       <nav>
-        <Link href={localeHref}>{t.LANGUAGE_LINK_TEXT}</Link>
       </nav>
 
       <p>

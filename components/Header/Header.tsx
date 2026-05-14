@@ -11,13 +11,13 @@ const Header = ({ t }: HeaderProps) => {
 
   return (
     <header className="flex items-center justify-between py-4">
-      <a href={href} className="flex items-center no-underline text-[--interactive]">
-        <div className="pt-4">
+      <a href={href} className="flex items-center no-underline text-[--interactive] min-w-0">
+        <div className="pt-4 flex-shrink-0">
           <Logo width={80} height={55} color="#d0383e" />
         </div>
-        <h1 className="ml-2 text-4xl font-bold my-6 relative">
+        <h1 className="ml-2 text-2xl sm:text-4xl font-bold my-6 relative whitespace-nowrap">
           HTTP Cats
-          <span className="absolute -top-1 -right-16 text-xs font-semibold tracking-wider opacity-50 border border-current rounded px-1 py-0.5">
+          <span className="absolute -top-1 -right-14 sm:-right-16 text-xs font-semibold tracking-wider opacity-50 border border-current rounded px-1 py-0.5">
             refined
           </span>
         </h1>

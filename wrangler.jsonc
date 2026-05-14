@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers Static Assets 配置
+  // 文档：https://developers.cloudflare.com/workers/static-assets/
+  "name": "httpcat-refined",
+  "compatibility_date": "2025-05-14",
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS",
+    // 404 fallback：访问不存在的路径时返回 out/404.html
+    "not_found_handling": "404-page"
+  }
+}

@@ -20,6 +20,9 @@ const Thumbnail = ({ code, description, t }: ThumbnailProps) => {
 
   const saveScrollPosition = () => {
     sessionStorage.setItem('homeScrollPosition', window.scrollY.toString());
+    if (window.location.hash) {
+      sessionStorage.setItem('homeCategoryHash', window.location.hash);
+    }
   };
 
   return (

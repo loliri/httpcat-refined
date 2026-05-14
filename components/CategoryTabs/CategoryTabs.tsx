@@ -40,8 +40,11 @@ const CategoryTabs = ({ categories, t }: Props) => {
 
   return (
     <div>
-      {/* Tab bar */}
-      <div className="flex flex-wrap gap-2 mt-8 mb-0">
+      {/* Tab bar — horizontal scroll on mobile, no wrap */}
+      <div
+        className="flex gap-2 mt-8 mb-0 overflow-x-auto pb-1"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
         {categories.map((cat, idx) => {
           const isActive = idx === active;
           return (
@@ -49,7 +52,7 @@ const CategoryTabs = ({ categories, t }: Props) => {
               key={cat.key}
               onClick={() => handleClick(idx)}
               className={[
-                'px-4 py-2 rounded-t text-sm font-semibold transition-colors border-b-2',
+                'px-4 py-2 rounded-t text-sm font-semibold transition-colors border-b-2 whitespace-nowrap flex-shrink-0',
                 isActive
                   ? 'border-[--interactive] text-[--interactive] bg-[--bg-color]'
                   : 'border-transparent opacity-60 hover:opacity-100',

@@ -15,8 +15,8 @@ export default async function Home() {
       <ScrollRestore />
       <Header t={t} />
       <main>
-        <Usage t={t} />
         <CategoryTabs categories={categories} t={t} />
+        <Usage t={t} />
       </main>
       <Footer t={t} />
     </>

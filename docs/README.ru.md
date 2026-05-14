@@ -71,7 +71,7 @@ npm run build
 1. Добавьте запись в `lib/statuses.js`:
 
 ```js
-505: { code: 505, message: 'HTTP Version Not Supported', messageZh: '不支持的 HTTP 版本', hasImage: false },
+505: { code: 505, message: 'HTTP Version Not Supported', messageI18n: { zh: '不支持的 HTTP 版本', ja: 'サポートされていない HTTP バージョン' }, hasImage: false },
 ```
 
 2. Добавьте описание на английском в `content/en/<code>.md`

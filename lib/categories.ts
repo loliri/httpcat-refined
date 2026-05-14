@@ -3,8 +3,7 @@ import statuses from './statuses';
 export type Status = {
   code: number;
   message: string;
-  messageZh?: string;
-  messageJa?: string;
+  messageI18n?: Record<string, string>;
   hasImage: boolean;
 };
 

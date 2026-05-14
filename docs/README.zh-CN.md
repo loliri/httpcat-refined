@@ -71,7 +71,7 @@ npm run build
 1. 在 `lib/statuses.js` 中添加条目：
 
 ```js
-505: { code: 505, message: 'HTTP Version Not Supported', messageZh: '不支持的 HTTP 版本', hasImage: false },
+505: { code: 505, message: 'HTTP Version Not Supported', messageI18n: { zh: '不支持的 HTTP 版本', ja: 'サポートされていない HTTP バージョン' }, hasImage: false },
 ```
 
 2. 添加英文描述 `content/en/<code>.md`

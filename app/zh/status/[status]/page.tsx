@@ -9,6 +9,7 @@ import StatusDescription from '@/components/StatusDescription';
 import statuses from '@/lib/statuses';
 import { getStatusInfo } from '@/lib/status-info';
 import { getTranslations } from '@/lib/translation';
+import { localizedStatusName } from '@/lib/locale';
 
 export default async function Info(props: { params: Promise<{ status: string }> }) {
   const params = await props.params;
@@ -16,6 +17,7 @@ export default async function Info(props: { params: Promise<{ status: string }> 
 
   const statusObj = statuses[params.status as unknown as keyof typeof statuses];
   const statusInfoHTML = await getStatusInfo(params.status, t.LOCALE);
+  const localizedName = localizedStatusName(statusObj, 'zh');
 
   return (
     <>
@@ -27,9 +29,9 @@ export default async function Info(props: { params: Promise<{ status: string }> 
 
         <h1 className="text-center my-12">
           {statusObj.code} {statusObj.message}
-          {statusObj.messageZh && (
+          {localizedName && (
             <span className="block text-xl font-normal opacity-80 mt-1">
-              {statusObj.messageZh}
+              {localizedName}
             </span>
           )}
         </h1>
@@ -65,8 +67,9 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await props.params;
   const statusObj = statuses[params.status as unknown as keyof typeof statuses];
-  const localizedName = statusObj.messageZh
-    ? `${statusObj.message}（${statusObj.messageZh}）`
+  const zhName = localizedStatusName(statusObj, 'zh');
+  const localizedName = zhName
+    ? `${statusObj.message}（${zhName}）`
     : statusObj.message;
   const title = `${statusObj.code} ${localizedName} | HTTP Cats · refined`;
   const description = `${statusObj.code} ${localizedName} 的 HTTP 猫咪图片`;

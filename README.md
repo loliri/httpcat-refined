@@ -101,7 +101,7 @@ This runs `next build` followed by a post-build script that prepares the static 
 1. Add an entry to `lib/statuses.js`:
 
 ```js
-505: { code: 505, message: 'HTTP Version Not Supported', messageZh: '不支持的 HTTP 版本', hasImage: false },
+505: { code: 505, message: 'HTTP Version Not Supported', messageI18n: { zh: '不支持的 HTTP 版本', ja: 'サポートされていない HTTP バージョン' }, hasImage: false },
 ```
 
 2. Add an English description at `content/en/<code>.md`

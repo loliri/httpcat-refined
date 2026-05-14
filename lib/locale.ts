@@ -2,8 +2,7 @@
 
 type StatusLike = {
   message: string;
-  messageZh?: string;
-  messageJa?: string;
+  messageI18n?: Record<string, string>;
 };
 
 // en 是默认语言，没有路径前缀；其他语言走 /<code>/...
@@ -21,7 +20,6 @@ export function localizedStatusName(
   status: StatusLike,
   locale: string,
 ): string | undefined {
-  if (locale === 'zh') return status.messageZh;
-  if (locale === 'ja') return status.messageJa;
-  return undefined;
+  if (locale === 'en') return undefined;
+  return status.messageI18n?.[locale];
 }

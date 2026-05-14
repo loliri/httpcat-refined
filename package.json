@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build && node ./scripts/post-build.js",
     "start": "next start",
-    "lint": "eslint .",
-    "scrapper": "node ./scripts/scrapper.js"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@types/node": "^20.14.9",
@@ -28,8 +27,5 @@
     "typescript": "^5.5.2",
     "unified": "^11.0.4"
   },
-  "devDependencies": {
-    "jsdom": "^24.1.0",
-    "p-map": "^7.0.2"
-  }
+  "devDependencies": {}
 }

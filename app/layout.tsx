@@ -65,15 +65,12 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var m={'zh-CN':'zh-CN','zh-TW':'zh-TW',ja:'ja-JP',fr:'fr-FR',ru:'ru-RU',es:'es-ES'};var s=location.pathname.split('/')[1];document.documentElement.lang=m[s]||'en';})();`,
-          }}
-        />
-      </head>
       <body>
         <div className="p-4 sm:px-16 sm:py-4 lg:px-32 lg:py-4">{children}</div>
+        {/* Set <html lang> based on URL after hydration to avoid SSR mismatch */}
+        <Script id="html-lang-setter" strategy="afterInteractive">
+          {`(function(){var m={'zh-CN':'zh-CN','zh-TW':'zh-TW',ja:'ja-JP',fr:'fr-FR',ru:'ru-RU',es:'es-ES'};var s=location.pathname.split('/')[1];document.documentElement.lang=m[s]||'en';})();`}
+        </Script>
         {/* Google tag (gtag.js) */}
         <Script
           async

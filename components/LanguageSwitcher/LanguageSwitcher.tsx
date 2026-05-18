@@ -5,8 +5,12 @@ import { useRouter, usePathname } from 'next/navigation';
 
 const LANGUAGES = [
   { code: 'en', label: 'English' },
-  { code: 'zh', label: '中文' },
+  { code: 'zh-CN', label: '简体中文' },
+  { code: 'zh-TW', label: '繁體中文' },
   { code: 'ja', label: '日本語' },
+  { code: 'fr', label: 'Français' },
+  { code: 'ru', label: 'Русский' },
+  { code: 'es', label: 'Español' },
 ];
 
 // en 是根路径，无前缀；其他语言走 /<code>/...

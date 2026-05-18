@@ -1,4 +1,4 @@
-import { Metadata, Viewport } from 'next';
+﻿import { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 
 import './globals.css';
@@ -9,8 +9,12 @@ export const metadata: Metadata = {
     canonical: '/',
     languages: {
       en: '/',
-      'zh-CN': '/zh',
+      'zh-CN': '/zh-CN',
+      'zh-TW': '/zh-TW',
       'ja-JP': '/ja',
+      'fr-FR': '/fr',
+      'ru-RU': '/ru',
+      'es-ES': '/es',
     },
   },
   icons: {
@@ -23,7 +27,7 @@ export const metadata: Metadata = {
   },
   title: 'HTTP Cats · refined',
   description:
-    'HTTP status codes illustrated with cats. A refined fork with more codes, Chinese localization, and a cleaner UI.',
+    'HTTP status codes illustrated with cats. A refined fork with more codes, multilingual UI, and a cleaner experience.',
   keywords:
     'http, cats, http cats, http status cats, status cats, error, refined',
   openGraph: {
@@ -31,7 +35,7 @@ export const metadata: Metadata = {
     title: 'HTTP Cats · refined',
     siteName: 'HTTP Cats · refined',
     description:
-      'HTTP status codes illustrated with cats. A refined fork with more codes, Chinese localization, and a cleaner UI.',
+      'HTTP status codes illustrated with cats. A refined fork with more codes, multilingual UI, and a cleaner experience.',
     images: [
       {
         url: '/images/204.jpg',
@@ -43,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'HTTP Cats · refined',
     description:
-      'HTTP status codes illustrated with cats. A refined fork with more codes, Chinese localization, and a cleaner UI.',
+      'HTTP status codes illustrated with cats. A refined fork with more codes, multilingual UI, and a cleaner experience.',
     images: ['/images/204.jpg'],
   },
 };
@@ -64,7 +68,7 @@ export default async function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var m={zh:'zh-CN',ja:'ja-JP'};var s=location.pathname.split('/')[1];document.documentElement.lang=m[s]||'en';})();`,
+            __html: `(function(){var m={'zh-CN':'zh-CN','zh-TW':'zh-TW',ja:'ja-JP',fr:'fr-FR',ru:'ru-RU',es:'es-ES'};var s=location.pathname.split('/')[1];document.documentElement.lang=m[s]||'en';})();`,
           }}
         />
       </head>

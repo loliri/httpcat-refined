@@ -9,29 +9,31 @@ import StatusDescription from '@/components/StatusDescription';
 import statuses from '@/lib/statuses';
 import { getStatusInfo } from '@/lib/status-info';
 import { getTranslations } from '@/lib/translation';
-import { buildHrefLangMap } from '@/lib/locale';
+import { localizedStatusName, buildHrefLangMap } from '@/lib/locale';
 
 export default async function Info(props: { params: Promise<{ status: string }> }) {
   const params = await props.params;
-  const statusObj = statuses[params.status as unknown as keyof typeof statuses];
-  const statusInfoHTML = await getStatusInfo(params.status);
+  const t = await getTranslations('fr');
 
-  const t = await getTranslations('en');
+  const statusObj = statuses[params.status as unknown as keyof typeof statuses];
+  const statusInfoHTML = await getStatusInfo(params.status, t.LOCALE);
+  const localizedName = localizedStatusName(statusObj, 'fr');
 
   return (
     <>
       <Header t={t} />
       <main>
         <nav>
-          <Link
-            href="/"
-            className="text-white"
-            scroll={false}
-          >{`< ${t.BACK_TO_HOME}`}</Link>
+          <Link href="/fr" className="text-white">{`< ${t.BACK_TO_HOME}`}</Link>
         </nav>
 
         <h1 className="text-center my-12">
           {statusObj.code} {statusObj.message}
+          {localizedName && (
+            <span className="block text-xl font-normal opacity-80 mt-1">
+              {localizedName}
+            </span>
+          )}
         </h1>
 
         <div className="text-center">
@@ -65,22 +67,27 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await props.params;
   const statusObj = statuses[params.status as unknown as keyof typeof statuses];
-  const title = `${statusObj.code} ${statusObj.message} | HTTP Cats · refined`;
-  const description = `HTTP Cat for status ${statusObj.code} ${statusObj.message}`;
+  const frName = localizedStatusName(statusObj, 'fr');
+  const localizedName = frName
+    ? `${statusObj.message} (${frName})`
+    : statusObj.message;
+  const title = `${statusObj.code} ${localizedName} | HTTP Cats · refined`;
+  const description = `Image de chat HTTP pour le statut ${statusObj.code} ${localizedName}`;
   const imagePath = statusObj.hasImage ? `/images/${statusObj.code}.jpg` : '/images/0.jpg';
 
   return {
     title,
     description,
     alternates: {
-      canonical: `/status/${statusObj.code}`,
+      canonical: `/fr/status/${statusObj.code}`,
       languages: buildHrefLangMap(`/status/${statusObj.code}`),
     },
     openGraph: {
       title,
       description,
-      url: `/status/${statusObj.code}`,
+      url: `/fr/status/${statusObj.code}`,
       images: [{ url: imagePath, alt: statusObj.message }],
+      locale: 'fr_FR',
     },
     twitter: {
       card: 'summary_large_image',

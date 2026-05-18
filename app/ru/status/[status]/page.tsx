@@ -9,22 +9,22 @@ import StatusDescription from '@/components/StatusDescription';
 import statuses from '@/lib/statuses';
 import { getStatusInfo } from '@/lib/status-info';
 import { getTranslations } from '@/lib/translation';
-import { localizedStatusName } from '@/lib/locale';
+import { localizedStatusName, buildHrefLangMap } from '@/lib/locale';
 
 export default async function Info(props: { params: Promise<{ status: string }> }) {
   const params = await props.params;
-  const t = await getTranslations('zh');
+  const t = await getTranslations('ru');
 
   const statusObj = statuses[params.status as unknown as keyof typeof statuses];
   const statusInfoHTML = await getStatusInfo(params.status, t.LOCALE);
-  const localizedName = localizedStatusName(statusObj, 'zh');
+  const localizedName = localizedStatusName(statusObj, 'ru');
 
   return (
     <>
       <Header t={t} />
       <main>
         <nav>
-          <Link href="/zh" className="text-white">{`< ${t.BACK_TO_HOME}`}</Link>
+          <Link href="/ru" className="text-white">{`< ${t.BACK_TO_HOME}`}</Link>
         </nav>
 
         <h1 className="text-center my-12">
@@ -67,31 +67,27 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await props.params;
   const statusObj = statuses[params.status as unknown as keyof typeof statuses];
-  const zhName = localizedStatusName(statusObj, 'zh');
-  const localizedName = zhName
-    ? `${statusObj.message}（${zhName}）`
+  const ruName = localizedStatusName(statusObj, 'ru');
+  const localizedName = ruName
+    ? `${statusObj.message} (${ruName})`
     : statusObj.message;
   const title = `${statusObj.code} ${localizedName} | HTTP Cats · refined`;
-  const description = `${statusObj.code} ${localizedName} 的 HTTP 猫咪图片`;
+  const description = `HTTP-кот для статуса ${statusObj.code} ${localizedName}`;
   const imagePath = statusObj.hasImage ? `/images/${statusObj.code}.jpg` : '/images/0.jpg';
 
   return {
     title,
     description,
     alternates: {
-      canonical: `/zh/status/${statusObj.code}`,
-      languages: {
-        en: `/status/${statusObj.code}`,
-        'zh-CN': `/zh/status/${statusObj.code}`,
-        'ja-JP': `/ja/status/${statusObj.code}`,
-      },
+      canonical: `/ru/status/${statusObj.code}`,
+      languages: buildHrefLangMap(`/status/${statusObj.code}`),
     },
     openGraph: {
       title,
       description,
-      url: `/zh/status/${statusObj.code}`,
+      url: `/ru/status/${statusObj.code}`,
       images: [{ url: imagePath, alt: statusObj.message }],
-      locale: 'zh_CN',
+      locale: 'ru_RU',
     },
     twitter: {
       card: 'summary_large_image',

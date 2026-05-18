@@ -7,7 +7,7 @@ import { getTranslations } from '@/lib/translation';
 import { getCategories } from '@/lib/categories';
 
 export default async function Home() {
-  const t = await getTranslations('zh');
+  const t = await getTranslations('ru');
   const categories = getCategories();
 
   return (

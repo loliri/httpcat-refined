@@ -9,7 +9,7 @@ import StatusDescription from '@/components/StatusDescription';
 import statuses from '@/lib/statuses';
 import { getStatusInfo } from '@/lib/status-info';
 import { getTranslations } from '@/lib/translation';
-import { localizedStatusName } from '@/lib/locale';
+import { localizedStatusName, buildHrefLangMap } from '@/lib/locale';
 
 export default async function Info(props: { params: Promise<{ status: string }> }) {
   const params = await props.params;
@@ -80,11 +80,7 @@ export async function generateMetadata(
     description,
     alternates: {
       canonical: `/ja/status/${statusObj.code}`,
-      languages: {
-        en: `/status/${statusObj.code}`,
-        'zh-CN': `/zh/status/${statusObj.code}`,
-        'ja-JP': `/ja/status/${statusObj.code}`,
-      },
+      languages: buildHrefLangMap(`/status/${statusObj.code}`),
     },
     openGraph: {
       title,

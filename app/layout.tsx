@@ -27,15 +27,15 @@ export const metadata: Metadata = {
   },
   title: 'HTTP Cats · refined',
   description:
-    'HTTP status codes illustrated with cats. A refined fork with more codes, multilingual UI, and a cleaner experience.',
+    'HTTP status codes illustrated with cats. 120+ codes — standard RFC, Nginx 4xx, Cloudflare 5xx & 1xxx. Available in EN, 简体中文, 繁體中文, 日本語, Français, Русский, Español.',
   keywords:
-    'http, cats, http cats, http status cats, status cats, error, refined',
+    'http, cats, http cats, http status codes, http status cats, nginx, cloudflare, error codes, refined, multilingual, i18n',
   openGraph: {
     type: 'website',
     title: 'HTTP Cats · refined',
     siteName: 'HTTP Cats · refined',
     description:
-      'HTTP status codes illustrated with cats. A refined fork with more codes, multilingual UI, and a cleaner experience.',
+      'HTTP status codes illustrated with cats. 120+ codes — standard RFC, Nginx 4xx, Cloudflare 5xx & 1xxx. Available in EN, 简体中文, 繁體中文, 日本語, Français, Русский, Español.',
     images: [
       {
         url: '/images/204.jpg',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'HTTP Cats · refined',
     description:
-      'HTTP status codes illustrated with cats. A refined fork with more codes, multilingual UI, and a cleaner experience.',
+      'HTTP status codes illustrated with cats. 120+ codes — standard RFC, Nginx 4xx, Cloudflare 5xx & 1xxx. Available in EN, 简体中文, 繁體中文, 日本語, Français, Русский, Español.',
     images: ['/images/204.jpg'],
   },
 };

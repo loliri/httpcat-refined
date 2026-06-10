@@ -15,7 +15,7 @@ const Footer = ({ t }: FooterProps) => {
       </div>
       <p>
         {t.REFINED_BY}{' '}
-        <a href="https://github.com/jhll1124" target="_blank" rel="noopener noreferrer">@jhll1124</a>
+        <a href="https://github.com/loliri" target="_blank" rel="noopener noreferrer">@loliri</a>
       </p>
       <p>
         {t.DEVELOPED_BY}{' '}

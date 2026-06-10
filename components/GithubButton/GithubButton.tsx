@@ -11,7 +11,7 @@ const GithubButton = ({ width = 50, height = 50 }: GithubButtonProps) => (
   <div className="flex items-center gap-4">
     <div className="flex flex-col items-center gap-1">
       <a
-        href="https://github.com/jhll1124/httpcat-refined"
+        href="https://github.com/loliri/httpcat-refined"
         target="_blank"
         rel="noopener noreferrer"
         title="httpcat-refined — this fork"
